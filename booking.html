@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="assets/css/output.css" rel="stylesheet">   
+    <link href="assets/css/advert.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <style>
+        body{
+            font-family: 'Quicksand', sans-serif;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div class="relative">
+        <div class="mobile-menu hidden" id="mobile-menu">
+            <nav class="grid my-auto h-screen text-center bg-primary fixed w-screen z-50"
+                style="background-image:url('{{ asset('assets/images/background/banner.jpg') }}');background-size: cover; background-position: right; z-index:55;">
+                <div class="navigation grid items-center  my-auto">
+
+                    <a href="#" class="my-6 font-medium text-light hover:opacity-100 @php if(url()->current() == route('home')){ echo 'opacity-100';}else{echo 'opacity-50';}  @endphp">Ride</a>
+                    <a href="#" class="my-6 font-medium text-light opacity-50 hover:opacity-100 @php if(url()->current() == route('about')){ echo 'opacity-100';}else{echo 'opacity-50';}  @endphp">ABOUT</a>
+                    <a href="#" target="_blank" class="my-6 font-medium text-light opacity-50 hover:opacity-100 underline ">CHAT</a>
+                    <a href="#" class="my-6 font-medium text-light hover:opacity-100 @php if(url()->current() == route('dashboard')){ echo 'opacity-100';}else{echo 'opacity-50';}  @endphp">SETTINGS</a>
+                  
+
+                    
+                    <a href="{{ route('login') }}" class="my-6 font-medium text-light underline hover:underline-offset-4 hover:opacity-100 @php if(url()->current() == route('login')){ echo 'opacity-100';}else{echo 'opacity-50';}  @endphp">LOGIN</a>
+                    <a href="{{ route('signup') }}" class="my-6 font-medium text-lemon  hover:opacity-100 @php if(url()->current() == route('signup')){ echo 'opacity-100';}else{echo 'opacity-50';}  @endphp">REGISTER</a>
+                    
+                    
+                   
+
+                    <!-- <form action="{{ route('logout') }}" method="post" class="my-4">
+                       
+                        <a  class="my-6 font-medium text-light  hover:opacity-100 p-4"><button type="submit"><i class="fas fa-sign-out"></i> Logout</button> </a>
+                    </form> -->
+                    
+               
+                </div>
+            </nav>
+        </div>
+        <header class="flex justify-between w-full   px-10 py-5 z-50" style="z-index:55; background: rgb(34,125,229);
+        background: linear-gradient(157deg, rgba(34,125,229,1) 0%, rgba(148,40,148,0.8575805322128851) 60%);">
+            <div class="left ">
+                <a href="{{ route('home') }}">
+                        <div class="logo flex">
+                        <img src="{{ asset('assets/images/logo/logo-new.png') }}" class="" alt=""><div class="logo-name my-auto font-bold text-light">InterCampusRide</div>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="right hidden md:flex lg:flex ">
+                <nav class="mr-12 my-auto">
+                    <a href="#" class="mx-2 font-medium text-light  hover:opacity-100 @php if(url()->current() == route('home')){ echo 'opacity-100';}else{echo 'opacity-50';}  @endphp">RIDES</a>
+                    <a href="#" class="mx-2 font-medium text-light   hover:opacity-100 @php if(url()->current() == route('about')){ echo 'opacity-100';}else{echo 'opacity-50';}  @endphp">ABOUT</a>
+                    <a href="#" target="_blank" class="mx-2 font-medium text-light   hover:opacity-100 ">WHITE PAPER</a>
+                    <a href="#" class="mx-2 font-medium text-light  hover:opacity-100 @php if(url()->current() == route('dashboard')){ echo 'opacity-100';}else{echo 'opacity-50';}  @endphp">SETTINGS</a>
+                    <a href="#" class="mx-2 font-medium text-light  hover:opacity-100 @php if(url()->current() == route('app')){ echo 'opacity-100';}else{echo 'opacity-50';}  @endphp">SUPPORT</a>
+
+                    <a href="#" class="mx-2 font-medium text-light  hover:opacity-100 @php if(url()->current() == route('app')){ echo 'opacity-100';}else{echo 'opacity-50';}  @endphp border-b-2 border-b-4  border-primary">Login</a>
+
+                    <a href="#" class="mx-2 p-2 px-4 inline-block rounded btn bg-primary font-medium text-light  hover:opacity-100 @php if(url()->current() == route('app')){ echo 'opacity-100';}else{echo 'opacity-50';}  @endphp"> <i class="fa-solid fa-user-plus mx-1"></i> Join</a>
+                    
+                   
+
+                </nav>
+               
+
+                
+               
+
+                <!-- <form class="join my-auto" action="{{ route('logout') }}" method="post">
+                    
+                    <button type="submit" class="font-medium text-light hover:opacity-100 text-primary"> <i class="fas fa-sign-out"></i> LOGOUT</button>
+                </form> -->
+                
+            </div>
+            <div class="block md:hidden my-auto z-55" style="z-index:70">
+                <button>
+                    <i class="fas fa-bars text-light" id="show"></i>
+                    <i class="fa-solid fa-xmark text-light " id="close"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="">
+           
+            <div class="screen w-full ">
+                <div class="h-52 w-full"style="background-image:url('assets/images/background.jpg'); background-size:cover;background-repeat:no-repeat" ></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-4  m-4 md:mx-8">
+        
+
+     
+                    <div class="card p-4 col-span-3 md:col-span-1 order-3 md:order-1">
+                        <h1 class="text-center text-2xl font-bold my-4">Driver Details</h1>
+                        <div class="profile order my-4">
+                            <div class="">
+                                <img src="assets/images/user-image.jpg" class="h-42  w-42 m-1" alt="">
+                                <h2 class="my-auto  text-2xl"> <i class="fa-light fa-signature mx-2 text-primary"></i>Driver Deo</h2>
+                                <p class="my-2"> <i class="fa-solid fa-phone-rotary mx-2 text-primary"></i> +234 812 0844 654</p>
+                                <p class="my-2"> <i class="fa-sharp fa-solid fa-location-dot mx-2 text-primary"></i> 204 Rosser Ave Waynesboro</p>
+                                <p class="my-2"> <i class="fa-light fa-id-badge mx-2 text-primary"></i> 2017/123456</p>
+                                <p class="my-2"> <i class="fa-solid fa-school mx-2 text-primary"></i> Enginering</p>
+                                <p class="my-2"> <i class="fa-solid fa-building mx-2 text-primary"></i> Electronic Enginering</p>
+                                <p class="text-yellow">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                    <i class="fa-thin fa-star"></i>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card col-span-3 order order-1 md:order-2">
+                           
+                            <div class="title flex justify-between px-4 mt-4">
+                                <div class="flex">
+                                    <img src="assets/images/user-image.jpg" class="h-16 rounded-full w-16 rounded-full m-1" alt="">
+                                    <p class="my-auto font-bold text-sm">Driver Deo</p>
+                                </div>
+                                <div class="my-auto">
+                                    <p>2hr:30m</p>
+                                </div>
+                            </div>
+                            <div class="time flex justify-between my-4  px-4">
+                                <div class="take-off-time">
+                                    <h4 class="font-bold text-xl">7:25</h4>
+                                    <p class=" text-xs font-semibold">UNEC</p>
+                                </div>
+                                
+                                <div class="path relative  w-2/3 rounded-full h-1 my-auto bg-primary/[.1]" style="">
+                                <i class="car fa-solid fa-car-side"></i>
+                                
+                            </div>
+                                <div class="arrival-time">
+                                    <h4 class="font-bold text-xl">8:45</h4>
+                                    <p class=" text-xs font-semibold text-end">UNN</p>
+                                </div>
+                            </div>
+                            <div class="seats flex justify-between my-4 px-4">
+                                <div class="text-start">
+                                    
+                                    <p class="my-auto font-bold text-xl">seats</p>
+                                    <p class="my-auto font-semibold text-md">4</p>
+                                </div>
+                                <div class="my-auto text-end">
+            
+                                    <p class="font-bold text-xl"> Available</p>
+                                    <p class="font-semibold text-md"> 2</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-between my-4 px-4">
+                                <div class="flex">
+                                    
+                                   
+                                </div>
+                                <div class="my-auto font-bold text-xl">
+            
+                                    <p>₦5,000</p>
+                                </div>
+                            </div>
+                            <div class="text-center my-6 px-4">
+                                <h2 class="text-lg my-4 font-bold">Select a seating position</h2>
+                                <div class="grid grid-cols-2 w-full md:w-1/4 mx-auto ">
+                                    <label for="seat-1" class="block p-3 w-10 rounded text-light cursor-pointer bg-primary m-2 mx-auto">1</label>
+                                    <input type="radio" name="seat" id="seat-1" class="seat hidden ">
+                                    <label for="seat-2" class="block p-3 w-10 rounded text-light cursor-pointer bg-primary m-2 mx-auto">2</label>
+                                    <input type="radio" name="seat" id="seat-2" class="seat hidden ">
+                                 
+                                </div>
+                                <div class="grid grid-cols-3 w-full md:w-1/4 mx-auto ">
+                                    <label for="seat-3" class="block p-3 w-10 rounded text-light cursor-pointer bg-primary m-2 mx-auto">3</label>
+                                    <input type="radio" name="seat" id="seat-3" class="seat hidden ">
+                                    <label for="seat-4" class="block p-3 w-10 rounded text-light cursor-pointer bg-primary m-2 mx-auto">4</label>
+                                    <input type="radio" name="seat" id="seat-4" class="seat hidden ">
+                                    <label for="seat-5" class="block p-3 w-10 rounded text-light cursor-pointer bg-primary m-2 mx-auto">5</label>
+                                    <input type="radio" name="seat" id="seat-5" class="seat hidden ">
+                                </div>
+                                <div class="grid grid-cols-3 w-full md:w-1/4 mx-auto ">
+                                    <label for="seat-6" class="block p-3 w-10 rounded text-light cursor-pointer bg-primary m-2 mx-auto">6</label>
+                                    <input type="radio" name="seat" id="seat-6" class="seat hidden ">
+                                    <label for="seat-7" class="block p-3 w-10 rounded text-light cursor-pointer bg-primary m-2 mx-auto">7</label>
+                                    <input type="radio" name="seat" id="seat-7" class="seat hidden ">
+                                    <label for="seat-8" class="block p-3 w-10 rounded text-light cursor-pointer bg-primary m-2 mx-auto">8</label>
+                                    <input type="radio" name="seat" id="seat-8" class="seat hidden ">
+                                </div>
+                            </div>
+                            <div class="car-details my-8 px-4 text-center">
+                                <h3 class="text-lg my-4 font-bold">Car Details</h3>
+                                <div class="grid  grid-cols-1 md:grid-cols-3">
+                                    <div class="btn-views" >
+                                        View Car:  <button type="button" id="showCarImage" class="bg-primary text-light px-2 rounded hover:bg-primary/[.9]">view</button>
+                                    </div>
+                                    <div class="btn-views">
+                                        Car  particulars:  <button type="button" id="carParticulars" class="bg-primary text-light px-2 rounded hover:bg-primary/[.9]">view</button>
+                                    </div>
+                                    <div class="btn-views">
+                                        View Car:  <button type="button" class="bg-primary text-light px-2 rounded hover:bg-primary/[.9]">view</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-4 my-8">
+                                <a class="block text-center bg-primary  py-4 rounded text-light font-bold" ">Book</a>
+                            </div>
+                    </div>
+                    <div class=" col-span-3 md:col-span-1 p-4 order order-2 md:order-3 card">
+                        <div class="text-center py-6">
+                            <h2 class="font-md"> 
+                                <span class="block font-bold">Price: </span> 
+                                <p class="text-4xl font-bold">₦ 5000 </p> 
+                            </h2>
+                            <div class="my-4"> 
+                                <span class="block font-bold">Note: </span>
+                                <p>
+                                    The cost of the fare will be subject to adjustment if you possess luggage exceeding a weight threshold of 10 kilograms. In such instances, a modification in the fare pricing structure shall be implemented to account for the additional weight, thereby ensuring a fair and equitable distribution of costs. 
+                                </p>
+                             </div>
+                        </div>
+                    </div>
+                  
+        
+        
+                  
+              
+                  
+                </div>
+            </div>
+        </div>
+
+
+
+
+  
+  <!-- Main modal -->
+  <div class="hidden" id="cardshowCarImage">
+
+      <div  tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50  w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full flex justify-center  items-center bg-dark/[.7] ">
+          <div class="relative w-full max-w-2xl max-h-full border ">
+              <!-- Modal content -->
+              <div class="relative bg-light rounded-lg shadow dark:bg-gray-700">
+                  <!-- Modal header -->
+                  <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+                      <h3 class="text-xl font-semibold text-dark dark:text-white">
+                          CAR
+                      </h3>
+                      <button type="button"  class="closeBtn text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="defaultModal">
+                          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                          <span class="sr-only">Close modal</span>
+                      </button>
+                  </div>
+                  <!-- Modal body -->
+                  <div class="p-6 space-y-6">
+                    <a href="assets/images/background.jpg">
+    
+                        <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400 h-96 " style="background-image: url('assets/images/background.jpg');">
+                            
+                        </p>
+                    </a>
+                  </div>
+                  <!-- Modal footer -->
+                 
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="hidden" id="cardcarParticulars">
+
+      <div  tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50  w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full flex justify-center  items-center bg-dark/[.7] ">
+          <div class="relative w-full max-w-2xl max-h-full border ">
+              <!-- Modal content -->
+              <div class="relative bg-light rounded-lg shadow dark:bg-gray-700">
+                  <!-- Modal header -->
+                  <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+                      <h3 class="text-xl font-semibold text-dark dark:text-white">
+                          CAR
+                      </h3>
+                      <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="defaultModal">
+                          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                          <span class="sr-only">Close modal</span>
+                      </button>
+                  </div>
+                  <!-- Modal body -->
+                  <div class="p-6 space-y-6">
+                    <a href="assets/images/background.jpg">
+    
+                        <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400 h-96 " style="background-image: url('assets/images/background.jpg');">
+                            
+                        </p>
+                    </a>
+                  </div>
+                  <!-- Modal footer -->
+                 
+              </div>
+          </div>
+      </div>
+  </div>
+  
+
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/nav.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

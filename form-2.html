@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="/assets/css/output.css" rel="stylesheet">
+    <style>
+        *{
+            font-family: 'Geologica', sans-serif;
+        }
+    </style>
+    <title>Register</title>
+</head>
+<body>
+    <form class="">
+        <div class="flex justify-center border">
+            <!-- <div class="left hidden md:flex lg:flex bg-primary h-full w-1/2  items-center justify-center  overflow-hidden">
+                <div class="w-2/3 h-2/3 border flex items-center justify-center" style="background-image:url('/assets/images/banner.svg');background-size: contain; background-repeat: no-repeat;"></div>
+                <img src="/assets/images/banner3.png" alt="">
+            </div> -->
+            <div class="right flex h-full w-full md:w-1/2 justify-center items-center  py-10">
+               <div class="w-full mx-2 md:w-2/3">
+                <h1 class="text-5xl m-5 text-center font-extrabold">Sign In</h1>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+
+                        <div class="my-4 border border-primary rounded-md  flex  px-1">
+                            <label for="firstname" class="h-full my-auto  flex items-center"> <i class="fa-regular fa-user text-primary my-auto"></i>  </label>
+                            <input type="text" name="firstname" id="firstname" placeholder="Firstname" class=" w-full h-14 mx-2 mr-0 outline-0">
+                        </div>
+                        <div class="my-4 border border-primary rounded-md flex  px-1">
+                            <label for="lastname" class="h-full my-auto flex items-center"> <i class="fa-regular fa-user text-primary"></i> </label>
+                            <input type="lastname" name="lastname" id="lastname" placeholder="Lastname" class="w-full h-14 mx-2  outline-0 ">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 gap-2">
+                        <div class="my-4 border border-primary rounded-md  flex  px-1">
+                            <label for="email" class="h-full my-auto  flex items-center"> <i class="fa-light fa-at text-primary"></i> </label>
+                            <input type="text" name="email" id="email" placeholder="Email" class=" w-full h-14 mx-2 outline-0">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-2">
+
+                        <div class="my-4 border border-primary rounded-md flex px-2 ">
+                            <label for="regNo" class="h-full my-auto flex items-center"> <i class="fa-sharp fa-solid fa-id-badge text-primary"></i>  </label>
+                            <input type="text" name="regNo" id="regNo" placeholder="reg Number / staff Id number" class="w-full h-14 mx-2  outline-0 ">
+                        </div>
+                    
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-2">
+                        <div class="my-4 border border-primary rounded-md flex px-2 ">
+                            <label for="address" class="h-full my-auto flex items-center"> <i class="fa-solid fa-house-chimney text-primary"></i>  </label>
+                            <input type="text" name="address" id="address" placeholder="Address" class="w-full h-14 mx-2  outline-0 ">
+                        </div> 
+                    </div>
+                    <div class="grid grid-cols-1 gap-2">
+                        <div class="my-4 border border-primary rounded-md flex px-2 ">
+                            <label for="faculty" class="h-full my-auto flex items-center"> <i class="fa-solid fa-school text-primary"></i>  </label>
+                            <input type="text" name="faculty" id="faculty" placeholder="Faculty" class="w-full h-14 mx-2  outline-0 ">
+                        </div> 
+                    </div>
+                    <div class="grid grid-cols-1 gap-2">
+                        <div class="my-4 border border-primary rounded-md flex px-2 ">
+                            <label for="department" class="h-full my-auto flex items-center"> <i class="fa-solid fa-school text-primary"></i>  </label>
+                            <input type="text" name="department" id="department" placeholder="Department" class="w-full h-14 mx-2  outline-0 ">
+                        </div> 
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-2">
+
+                        <div class="my-4 border border-primary rounded-md flex px-2 ">
+                            <label for="password" class="h-full my-auto flex items-center"> <i class="fa-solid fa-key text-primary"></i>  </label>
+                            <input type="password" name="password" id="password" placeholder="Password" class="w-full h-14 mx-2  outline-0 ">
+                        </div>
+                    
+                    </div>
+                    <div class="grid grid-cols-1 gap-2">
+
+                        <div class="my-4 border border-primary rounded-md flex px-2 ">
+                            <label for="confirmPassword" class="h-full my-auto flex items-center"> <i class="fa-solid fa-key text-primary"></i> </label>
+                            <input type="confirmPassword" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" class="w-full h-14 mx-2  outline-0 ">
+                        </div>
+                    
+                    </div>
+                    
+                 
+                    <div class="my-4 flex items-center">
+                        <input type="checkbox" name="rememberMe" id="rememberMe" class="h-4 w-4 mr-2">
+                        <label for="rememberMe">Remember Me</label> 
+                    </div>
+                    <div class="my-4 text-end ">
+                        <button class="text-light bg-primary p-4 rounded-md w-full">Sign In</button>
+                    </div>
+                    <div class="">
+                        Don't have an account? <a href="#" class="text-primary underline ">Sign Up here</a>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
