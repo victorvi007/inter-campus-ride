@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="assets/css/output.css" rel="stylesheet">   
+    <link href="assets/css/advert.css" rel="stylesheet">
+    <style>
+        body{
+            font-family: 'Quicksand', sans-serif;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div class="relative">
+        <div class="mobile-menu hidden" id="mobile-menu">
+            <nav class="grid my-auto h-screen text-center bg-primary fixed w-screen z-50"
+                style="background-image:url('');background-size: cover; background-position: right; z-index:55;">
+                <div class="navigation grid items-center  my-auto">
+
+                    <a href="#" class="my-6 font-medium text-light hover:opacity-100 @php if(url()->current() == route('home')){ echo 'opacity-100';}else{echo 'opacity-50';}  @endphp">Ride</a>
+                    <a href="#" class="my-6 font-medium text-light opacity-50 hover:opacity-100 @php if(url()->current() == route('about')){ echo 'opacity-100';}else{echo 'opacity-50';}  @endphp">ABOUT</a>
+                    <a href="#" target="_blank" class="my-6 font-medium text-light opacity-50 hover:opacity-100 underline ">CHAT</a>
+                    <a href="#" class="my-6 font-medium text-light hover:opacity-100 @php if(url()->current() == route('dashboard')){ echo 'opacity-100';}else{echo 'opacity-50';}  @endphp">SETTINGS</a>
+                  
+
+                    
+                    <a href="{{ route('login') }}" class="my-6 font-medium text-light underline hover:underline-offset-4 hover:opacity-100 @php if(url()->current() == route('login')){ echo 'opacity-100';}else{echo 'opacity-50';}  @endphp">LOGIN</a>
+                    <a href="{{ route('signup') }}" class="my-6 font-medium text-lemon  hover:opacity-100 @php if(url()->current() == route('signup')){ echo 'opacity-100';}else{echo 'opacity-50';}  @endphp">REGISTER</a>
+                    
+                    
+                   
+
+                    <!-- <form action="{{ route('logout') }}" method="post" class="my-4">
+                       
+                        <a  class="my-6 font-medium text-light  hover:opacity-100 p-4"><button type="submit"><i class="fas fa-sign-out"></i> Logout</button> </a>
+                    </form> -->
+                    
+               
+                </div>
+            </nav>
+        </div>
+        <header class="flex justify-between w-full   px-10 py-5 z-50" style="z-index:55; background: rgb(34,125,229);
+        background: linear-gradient(157deg, rgba(34,125,229,1) 0%, rgba(148,40,148,0.8575805322128851) 60%);">
+            <div class="left ">
+                <a href="{{ route('home') }}">
+                        <div class="logo flex">
+                        <img src="{{ asset('assets/images/logo/logo-new.png') }}" class="" alt=""><div class="logo-name my-auto font-bold text-light">InterCampusRide</div>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="right hidden md:flex lg:flex ">
+                <nav class="mr-12 my-auto">
+                    <a href="#" class="mx-2 font-medium text-light  hover:opacity-100 @php if(url()->current() == route('home')){ echo 'opacity-100';}else{echo 'opacity-50';}  @endphp">RIDES</a>
+                    <a href="#" class="mx-2 font-medium text-light   hover:opacity-100 @php if(url()->current() == route('about')){ echo 'opacity-100';}else{echo 'opacity-50';}  @endphp">ABOUT</a>
+                    <a href="#" target="_blank" class="mx-2 font-medium text-light   hover:opacity-100 ">WHITE PAPER</a>
+                    <a href="#" class="mx-2 font-medium text-light  hover:opacity-100 @php if(url()->current() == route('dashboard')){ echo 'opacity-100';}else{echo 'opacity-50';}  @endphp">SETTINGS</a>
+                    <a href="#" class="mx-2 font-medium text-light  hover:opacity-100 @php if(url()->current() == route('app')){ echo 'opacity-100';}else{echo 'opacity-50';}  @endphp">SUPPORT</a>
+
+                    <a href="#" class="mx-2 font-medium text-light  hover:opacity-100 @php if(url()->current() == route('app')){ echo 'opacity-100';}else{echo 'opacity-50';}  @endphp border-b-2 border-b-4  border-primary">Login</a>
+
+                    <a href="#" class="mx-2 p-2 px-4 inline-block rounded btn bg-primary font-medium text-light  hover:opacity-100 @php if(url()->current() == route('app')){ echo 'opacity-100';}else{echo 'opacity-50';}  @endphp"> <i class="fa-solid fa-user-plus mx-1"></i> Join</a>
+                    
+                   
+
+                </nav>
+               
+
+                
+               
+
+                <!-- <form class="join my-auto" action="{{ route('logout') }}" method="post">
+                    
+                    <button type="submit" class="font-medium text-light hover:opacity-100 text-primary"> <i class="fas fa-sign-out"></i> LOGOUT</button>
+                </form> -->
+                
+            </div>
+            <div class="block md:hidden my-auto z-55" style="z-index:70">
+                <button>
+                    <i class="fas fa-bars text-light" id="show"></i>
+                    <i class="fa-solid fa-xmark text-light " id="close"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="p-6 ">
+           
+            <div class="screen w-full bg-light p-4">
+                <div class="mini-nav flex w-1/2  mx-auto">
+                    <a href="" class="p-2 border-b border-b-dark/[.1] hover:border-b-primary w-full text-center">Account Settings</a>
+                    <a href="" class="p-2 border-b border-b-dark/[.1] hover:border-b-primary w-full text-center">Login Security</a>
+                    <a href="" class="p-2 border-b border-b-dark/[.1] hover:border-b-primary w-full text-center">Notification</a>
+                    <a href="" class="p-2 border-b border-b-dark/[.1] hover:border-b-primary w-full text-center">Interface</a>
+                    <a href="" class="p-2 border-b border-b-dark/[.1] hover:border-b-primary w-full text-center">Interface</a>
+                </div>
+                <div class="upload">
+                    <p>Your Profile Picture</p>
+                    <div class="">
+                        <div class="upload-box">
+                            <label for="upload-avater" class="inline-block border h-36 border-dashed">Upload your Photo</label>
+                            <input type="file" name="" id="upload-avater" class="hidden">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/nav.js"></script>
+</body>
+</html>
