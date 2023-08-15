@@ -148,8 +148,15 @@
                                         Ride ID : <span class="font-bold">4R56GJI75</span>
                                     </div>
                                 </div>
-                                    <a href="#" class="btn bg-primary p-2 text-light rounded my-auto block">View Details</a>
-                                    <!-- <div class="">Tide Id</div> -->
+                                <div class="">
+
+                                    <a href="{{ route('booking', $ride->ride->id) }}" class="btn bg-primary p-2 text-light rounded my-auto block">View Details</a>
+                                    <form action="{{ route('cancel_booking') }}" method="POST" class="block">
+                                       <input type="hidden" name="ride_id" value="{{ $ride->ride_id }}">
+                                       <!-- @csrf -->
+                                       <button class="bg-danger text-light p-2 m-2 rounded"> <i class="fa-duotone fa-trash"></i> Submit</button>
+                                   </form>
+                                </div>
                            </div>
                         </div>
                 
